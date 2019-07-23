@@ -37,15 +37,13 @@ const createEmailParams = event => {
   };
 }
 
-function generateReturn(code, message) {
-  return {
-    statusCode: code,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://chris.dickinson.ch',
-    },
-    body: JSON.stringify({
-      message,
-    }),
-  }
-}
+const generateReturn = (code, message) => ({
+  statusCode: code,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'https://chris.dickinson.ch',
+  },
+  body: JSON.stringify({
+    message,
+  }),
+});
