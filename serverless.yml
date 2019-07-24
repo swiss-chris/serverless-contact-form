@@ -11,7 +11,10 @@ provider:
         - "ses:SendEmail"
       Resource: ["*"]
   environment:
-    AllowOrigin: '*'
+    allowOrigin: '*'
+    emailSource: chris@dickinson.ch
+    emailDestination: chris@dickinson.ch
+    emailSubject: New message from chris.dickinson.ch
 
 # you can define service wide environment variables here
 #  environment:

@@ -17,10 +17,10 @@ const createEmailParams = event => {
   const formData = JSON.parse(event.body);
 
   return {
-    Source: 'chris@dickinson.ch',
+    Source: process.env.emailSource,
     ReplyToAddresses: [formData.email],
     Destination: {
-      ToAddresses: ['chris@dickinson.ch'],
+      ToAddresses: [process.env.emailDestination],
     },
     Message: {
       Body: {
@@ -31,7 +31,7 @@ const createEmailParams = event => {
       },
       Subject: {
         Charset: 'UTF-8',
-        Data: 'New message from chris.dickinson.ch',
+        Data: process.env.emailSubject,
       },
     },
   };
@@ -42,7 +42,7 @@ const generateReturn = (code, message) => (
     statusCode: code,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': process.env.AllowOrigin,
+      'Access-Control-Allow-Origin': process.env.allowOrigin,
     },
     body: JSON.stringify({
       message,
