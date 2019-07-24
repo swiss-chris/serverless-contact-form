@@ -42,7 +42,7 @@ const generateReturn = (code, message) => (
     statusCode: code,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://chris.dickinson.ch',
+      'Access-Control-Allow-Origin': '*',
     },
     body: JSON.stringify({
       message,
