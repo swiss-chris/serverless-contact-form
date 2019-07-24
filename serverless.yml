@@ -10,6 +10,8 @@ provider:
       Action:
         - "ses:SendEmail"
       Resource: ["*"]
+  environment:
+    AllowOrigin: 'chris.dickinson.ch'
 
 # you can define service wide environment variables here
 #  environment:

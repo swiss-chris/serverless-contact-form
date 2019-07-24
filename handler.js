@@ -42,7 +42,7 @@ const generateReturn = (code, message) => (
     statusCode: code,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': process.env.AllowOrigin,
     },
     body: JSON.stringify({
       message,
